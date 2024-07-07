@@ -68,9 +68,16 @@
 
   @layer base {
     * {
-      @apply border-border;
+      @apply border-border text-text scroll-smooth;
     }
     body {
       @apply bg-background text-foreground;
+    }
+    .categories-link {
+      @apply flex items-center hover:font-bold;
+    }
+    a.active {
+      font-weight: 700;
+      font-size: 15px;
     }
   }
