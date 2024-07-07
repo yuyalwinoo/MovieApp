@@ -17,7 +17,11 @@ interface TopMovie {
   overview: string;
 }
 
-export default function TopRated() {
+interface TopRatedProps {
+  id?: string;
+}
+
+const TopRated: React.FC<TopRatedProps> = ({ id }) => {
   const [topRated, setTopRated] = useState<TopMovie[]>([]);
 
   useEffect(() => {
@@ -45,7 +49,7 @@ export default function TopRated() {
         className="uppercase text-3xl flex gap-2 items-baseline"
       >
         Top Rated
-        <Crown size={25} fill="yellow"/>
+        <Crown size={25} fill="yellow" />
       </Link>
       <Swiper
         slidesPerView={1}
@@ -79,4 +83,6 @@ export default function TopRated() {
       </Swiper>
     </>
   );
-}
+};
+
+export default TopRated;

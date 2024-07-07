@@ -17,7 +17,11 @@ interface PlayingMovie {
   overview: string;
 }
 
-export default function NowPlaying() {
+interface NowPlayingProps {
+  id?: string;
+}
+
+const NowPlaying: React.FC<NowPlayingProps> = ({ id }) => {
   const [playing, setPlaying] = useState<PlayingMovie[]>([]);
 
   useEffect(() => {
@@ -45,7 +49,7 @@ export default function NowPlaying() {
         className="uppercase text-3xl flex gap-2 items-baseline"
       >
         Now Playing
-        <Popcorn size={25} fill="#e9ff70"/>
+        <Popcorn size={25} fill="#e9ff70" />
       </Link>
       <Swiper
         slidesPerView={1}
@@ -79,4 +83,6 @@ export default function NowPlaying() {
       </Swiper>
     </>
   );
-}
+};
+
+export default NowPlaying;

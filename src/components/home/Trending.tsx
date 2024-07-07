@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Mousewheel } from "swiper/modules";
 import Link from "next/link";
-import { FlameIcon } from 'lucide-react';
+import { FlameIcon } from "lucide-react";
 
 interface TrendingMovie {
   id: number;
@@ -17,7 +17,11 @@ interface TrendingMovie {
   overview: string;
 }
 
-export default function Trending() {
+interface TrendingProps {
+  id?: string;
+}
+
+const Trending: React.FC<TrendingProps> = ({ id }) => {
   const [trending, setTrending] = useState<TrendingMovie[]>([]);
 
   useEffect(() => {
@@ -45,7 +49,7 @@ export default function Trending() {
         className="uppercase text-3xl flex gap-2 items-baseline"
       >
         Trending
-        <FlameIcon size={28} fill="#EF233C"/>
+        <FlameIcon size={28} fill="#EF233C" />
       </Link>
       <Swiper
         slidesPerView={1}
@@ -79,4 +83,6 @@ export default function Trending() {
       </Swiper>
     </>
   );
-}
+};
+
+export default Trending;

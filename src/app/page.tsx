@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <main className="p-[12px] lg:p-24 md:ps-7 min-h-screen bg-background text-text">
       <div className="max-w-[1100px] mx-auto">
-        <Trending />
-        <NowPlaying />
-        <TopRated />
+        <Trending id="trending"/>
+        <NowPlaying id="now-playing"/>
+        <TopRated id="top-rated"/>
       </div>
     </main>
   );
