@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Spinnaker } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/header/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const spinnaker = Spinnaker({
   weight: '400',
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={spinnaker.className}>
         <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
