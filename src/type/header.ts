@@ -5,5 +5,6 @@ export interface ICommandProps {
     id: number;
     value: string; 
     label: string;
-    icon:  LucideIcon}[];
+    icon:  LucideIcon;
+    color: string}[];
   }
